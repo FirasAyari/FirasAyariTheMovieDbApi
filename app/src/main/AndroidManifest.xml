@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    package="com.firas.TheMovieDbApp"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- /Permissions -->
+
+    <application
+        android:name="com.firas.TheMovieDbApp.FirasApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="TheMovieDbByFiras"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- Activities -->
+        <activity
+            android:name="com.firas.TheMovieDbApp.ui.activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.firas.TheMovieDbApp.ui.activity.HomeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop">
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".ui.activity.SearchableActivity"/>
+        </activity>
+
+        <activity
+            android:name="com.firas.TheMovieDbApp.ui.activity.SimilarMovies"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop">
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".ui.activity.SearchableActivity"/>
+        </activity>
+
+
+        <activity
+            android:name="com.firas.TheMovieDbApp.ui.activity.MovieActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+        </activity>
+
+        <!-- /Activities -->
+
+        <!-- Receivers -->
+
+        <!-- /Receivers -->
+
+        <!-- Services -->
+
+
+        <!-- Provider -->
+        <provider
+            android:name="com.firas.TheMovieDbApp.data.provider.MoviesProvider"
+            android:authorities="com.firas.TheMovieDbApp.provider"
+            android:exported="false"/>
+        <!-- /Provider -->
+
+    </application>
+
+</manifest>
